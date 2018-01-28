@@ -2,11 +2,9 @@
 import sklearn.model_selection as sk_model
 import sklearn.neural_network as sk_neural
 import sklearn.metrics as sk_metrics
-import matplotlib.pyplot as plt
 import pandas as pd
-import numpy as np
 
-# """ package which dummies the data"""
+# """ package which dummies the data """
 import helpers.data_helper as dh
 
 
@@ -41,7 +39,15 @@ NEURAL_NETWORK = sk_neural.MLPClassifier(
 # Train the neural network
 NEURAL_NETWORK.fit(DATA_LEARN, TARGET_LEARN)
 
-#  Show the accuracy score of the neural network
+# Calculate accuracy score of the neural network
 ACCURACY_SCORE = sk_metrics.accuracy_score(TARGET_TEST, NEURAL_NETWORK.predict(DATA_TEST))
 
-print(ACCURACY_SCORE)
+# Print accuracy score
+print("ACCURACY_SCORE is equal: " + str(ACCURACY_SCORE) + "\n")
+
+# No confusion matrix for the multi label
+# # Calculate confusion matrix
+# CONFUSION_MATRIX = sk_metrics.confusion_matrix(TARGET_TEST, NEURAL_NETWORK.predict(DATA_TEST))
+
+# # Print confusion matrix
+# print(CONFUSION_MATRIX)
