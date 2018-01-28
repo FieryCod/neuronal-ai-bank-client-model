@@ -45,8 +45,8 @@ ACCURACY_SCORE = sk_metrics.accuracy_score(TARGET_TEST, NEURAL_NETWORK.predict(D
 # Print accuracy score
 print("ACCURACY_SCORE is equal: " + str(ACCURACY_SCORE) + "\n")
 
-# No confusion matrix for the multi label
-# # Calculate confusion matrix
+# # No confusion matrix for the multi label
+# Calculate confusion matrix
 # CONFUSION_MATRIX = sk_metrics.confusion_matrix(TARGET_TEST, NEURAL_NETWORK.predict(DATA_TEST))
 
 # # Print confusion matrix
