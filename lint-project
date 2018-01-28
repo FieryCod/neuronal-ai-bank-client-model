@@ -1,1 +1,1 @@
-pipenv run pylint src/*/**
+pipenv run pylint src/**
