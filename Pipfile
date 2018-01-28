@@ -12,6 +12,7 @@ numpy = "*"
 scipy = "*"
 pandas = "*"
 matplotlib = "*"
+pylint = "*"
 
 
 [dev-packages]

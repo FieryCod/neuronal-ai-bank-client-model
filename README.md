@@ -38,4 +38,4 @@ If you got a `ImportError` please install `python3-tk` module
 
 [Preprocessing Bank Marketing dataset](https://gist.github.com/mick001/9db3609e49e98069316267349abc37b5 "Preprocessing Bank Marketing dataset")
 
-[Bank marketing dataset information](https://archive.ics.uci.edu/ml/datasets/bank+marketing "Bank marketing dataset information")
+[Bank marketing data-set information](https://archive.ics.uci.edu/ml/datasets/bank+marketing "Bank marketing dataset information")

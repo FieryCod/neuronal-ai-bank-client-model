@@ -19,7 +19,7 @@ from sklearn.neural_network import MLPClassifier
 neural_network = MLPClassifier(
     max_iter=1000, activation='logistic', hidden_layer_sizes=(50, 30, 10))
 neural_network.fit(digits_learn, target_learn)
-
+print(digits_learn)
 print(digits.target[id])
 print("Neural:", neural_network.predict(digits.data[id].reshape(1, -1)))
 # plt.show()
