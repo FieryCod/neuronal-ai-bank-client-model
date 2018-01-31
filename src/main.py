@@ -1,12 +1,16 @@
 """ packages for processing the data and training the model """
+import numpy as np
+import matplotlib.pyplot as plt
 import sklearn.model_selection as sk_model
 import sklearn.neural_network as sk_neural
 import sklearn.metrics as sk_metrics
 import pandas as pd
 
-# """ package which dummies the data """
+# custom helpers
 import helpers.data_helper as dh
+import helpers.confusion_matrix_helper as cfm
 
+np.set_printoptions(precision=2)
 
 # Get dataset of the bank, load it via pd
 DATASET = pd.read_csv('datasets/bank-full.csv', sep=';')
@@ -39,15 +43,30 @@ NEURAL_NETWORK = sk_neural.MLPClassifier(
 # Train the neural network
 NEURAL_NETWORK.fit(DATA_LEARN, TARGET_LEARN)
 
+# Mean accuracy of the test data
+MEAN_ACCURACY = NEURAL_NETWORK.score(DATA_TEST, TARGET_TEST)
+print("MEAN_ACCURACY is equal: " + str(MEAN_ACCURACY) + "\n")
+
 # Calculate accuracy score of the neural network
 ACCURACY_SCORE = sk_metrics.accuracy_score(TARGET_TEST, NEURAL_NETWORK.predict(DATA_TEST))
 
 # Print accuracy score
 print("ACCURACY_SCORE is equal: " + str(ACCURACY_SCORE) + "\n")
 
-# # No confusion matrix for the multi label
 # Calculate confusion matrix
-# CONFUSION_MATRIX = sk_metrics.confusion_matrix(TARGET_TEST, NEURAL_NETWORK.predict(DATA_TEST))
+CONFUSION_MATRIX = sk_metrics.confusion_matrix(
+  TARGET_TEST.values.argmax(axis=1),
+  NEURAL_NETWORK.predict(DATA_TEST).argmax(axis=1)
+)
 
-# # Print confusion matrix
-# print(CONFUSION_MATRIX)
+# Plot non-normalized confusion matrix
+plt.figure()
+cfm.plot_confusion_matrix(CONFUSION_MATRIX, classes=TARGET_TEST.columns.values,
+                          title='Confusion matrix, without normalization')
+
+# Plot normalized confusion matrix
+plt.figure()
+cfm.plot_confusion_matrix(CONFUSION_MATRIX, classes=TARGET_TEST.columns.values, normalize=True,
+                          title='Normalized confusion matrix')
+
+plt.show()
