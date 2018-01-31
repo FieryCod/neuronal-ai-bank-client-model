@@ -3,7 +3,6 @@ import pandas as pd
 
 
 def get_dummied_data(data):
-
   """
     Data comes unprepared from the .csv file MLPClassifier
     expects only floats from categorical values

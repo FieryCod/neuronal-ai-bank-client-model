@@ -1,36 +1,58 @@
-# Neuronal-ai-bank-client-model #
+# Neuronal Bank Client Model
+Trained by Multi-layer Perceptron classifier.
 
--------------------------------------------------------------------------------
+## Prerequisites
 
-## Prerequisites ##
+1. Install `pipenv` globally using `pip`
+  - ```bash
+    $ pip install pipenv
+    ```
+    [More informations](https://github.com/pypa/pipenv#installation)
+ 
+  - When you encounter problems like: `pew` is not found in your path 
+  
+    ```bash
+    # First uninstall pipenv, virtualenv and pew:
+    $ pip uninstall virtualenv pew pipenv
+    # Then install it again in that order
+    $ pip install virtualenv pew pipenv
+    ```
 
-1. Install `pipenv`
-  - `pip install --user pipenv`
-
-2. Make sure that `pipenv` is in your $PATH. Add this somewhere according to the shell
-   you use (`.zprofile` or `.bashrc` or `.zsrc` or `.zshenv`)
-  - `export PATH=$HOME/.local/bin:/usr/local/bin:$PATH`
+2. Make sure that `pipenv` is in your $PATH. Add following line to shell configuration file: (bash: `.bashrc`, zsh: `.zshrc`)
+    ```bash
+    export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+    ```
 
 3. Install dependencies:
-  - `pipenv install`
+    ```bash
+    $ pipenv install
+    ```
 
 4. Run the project
-  - `sh run-project`
-
+    ```bash
+    $ ./run-project
+    ```
 
 ## Development ##
 
 In order to lint the project use
-  - `sh lint-project`
+```bash 
+$ ./lint-project
+```
 
 For switching to virtualenv shell use
-  - `pipenv shell`
+```bash
+$ pipenv shell
+```
 
 ## Issues ##
 
 If you got a `ImportError` please install `python3-tk` module
 
-`sudo apt-get install python3-tk`
+- Ubuntu:
+    ```bash
+    $ sudo apt-get install python3-tk
+    ```
 
 ## Resources ##
 
