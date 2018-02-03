@@ -38,7 +38,7 @@ DATA_LEARN, DATA_TEST, TARGET_LEARN, TARGET_TEST = sk_model.train_test_split(
 
 # Create a new neural_network
 NEURAL_NETWORK = sk_neural.MLPClassifier(
-  activation='logistic', hidden_layer_sizes=(50, 30, 10))
+  activation='logistic', hidden_layer_sizes=(10, 20, 20))
 
 # Train the neural network
 NEURAL_NETWORK.fit(DATA_LEARN, TARGET_LEARN)
